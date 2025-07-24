@@ -291,6 +291,37 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAwf3YPv_eBRnZcaqqyJZ9sAvvtnejeZd0",
+        authDomain: "wedding2025-19886.firebaseapp.com",
+        projectId: "wedding2025-19886",
+        storageBucket: "wedding2025-19886.firebasestorage.app",
+        messagingSenderId: "934739791771",
+        appId: "1:934739791771:web:8b84a0fc4d9f5ebe44db3e",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+      } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+      const db = getFirestore(app);
+
+      // Expose db to window for use in RSVP form submission
+      window.db = db;
+      window.addDoc = addDoc;
+      window.collection = collection;
+    </script>
     <script>
       $(document).ready(function () {
         // --- I18N (Internationalization) & CONTENT ---
@@ -460,14 +491,20 @@
           // Example: db.collection("rsvps").add(rsvpData)
           // For now, we'll just log it to the console and show a success message.
           console.log("RSVP Data for Firestore:", rsvpData);
-
-          $("#rsvp-success").slideDown();
-          $("#rsvp-form").slideUp();
+          window
+            .addDoc(window.collection(window.db, "rsvps"), rsvpData)
+            .then(() => {
+              $("#rsvp-success").slideDown();
+              $("#rsvp-form").slideUp();
+            })
+            .catch((error) => {
+              alert("Error saving RSVP: " + error.message);
+            });
         });
 
         // --- INITIALIZATION ---
         const initialLang = getQueryParam("lang") || "en";
-        //TODO fix me, uncomment me =>
+
         changeLanguage(initialLang);
 
         $("#lang-switcher").on("change", function () {
