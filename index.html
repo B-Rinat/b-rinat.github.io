@@ -3,674 +3,479 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rinat & Aziza's Wedding</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Wedding Invitation</title>
+
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Font Awesome for icons -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
     <style>
-      /* Custom styles */
-      .hero-section {
-        background-image: url("./11cd7d69bead242d5ca41f1cae672d3d.jpg");
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #fffaf0; /* Ivory */
+        color: #333;
+      }
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Playfair Display", serif;
+      }
+      .hero {
+        background: url("bg-1.jpg") no-repeat center center;
         background-size: cover;
-        background-position: center;
         height: 100vh;
-        color: white;
-        position: relative;
-      }
-
-      .hero-overlay {
-        background-color: rgba(0, 0, 0, 0.5);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        color: white;
+        background-attachment: fixed;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
       }
-
       .section {
-        padding: 80px 0;
+        padding: 30px 0;
       }
-
-      .section-title {
-        margin-bottom: 40px;
-        text-align: center;
+      .bg-light-pink {
+        background-color: #fffaf0 !important; /* Ivory */
       }
-
-      .location-img {
-        background-image: url("./burana-57ffe92214860a23c6d5ccdb24015ef7.jpg");
-        background-size: cover;
-        background-position: center;
-        height: 300px;
-        border-radius: 10px;
-      }
-
-      .gallery-img {
-        background-image: url("./videoframe_9414.png");
-        background-size: cover;
-        background-position: center;
-        height: 250px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-      }
-
-      .language-selector {
-        position: fixed;
-        bottom: 20px;
+      .lang-selector {
+        position: absolute;
+        top: 20px;
         right: 20px;
         z-index: 1000;
       }
-
-      @media (max-width: 768px) {
-        .hero-section {
-          height: 70vh;
-        }
-
-        .section {
-          padding: 50px 0;
-        }
+      .form-control,
+      .form-control:focus {
+        background-color: #fffaf0; /* Ivory */
+        border: 1px solid #e5dcc5;
+        color: #333;
+        box-shadow: none;
+      }
+      .form-control:focus {
+        border-color: #e5dcc5;
+        outline: none;
+      }
+      .form-select {
+        border-radius: 0;
+        background-color: #fffaf0; /* Ivory */
+        border: 1px solid #e5dcc5;
+      }
+      .btn-custom {
+        background-color: #e5dcc5; /* Light ivory/gold */
+        border-color: #e5dcc5;
+        color: #333;
+        border-radius: 0;
+        padding: 10px 30px;
+        font-weight: 500;
+        transition: background 0.2s, border 0.2s, color 0.2s;
+      }
+      .btn-custom:hover {
+        background-color: #f5e9d7; /* Slightly lighter ivory */
+        border-color: #f5e9d7;
+        color: #1a2b1a;
+      }
+      .container-box {
+        background: rgba(255, 255, 255, 0.85); /* Soft white for contrast */
+        border-radius: 0.7em;
+        padding: 2em 1.5em;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+        margin-bottom: 0;
       }
     </style>
   </head>
   <body>
-    <!-- Language Selector Floating Button -->
-    <div class="language-selector">
-      <div class="btn-group dropup">
-        <button
-          type="button"
-          class="btn btn-light dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <i class="fas fa-language"></i> Language
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-          <li><a class="dropdown-item" href="#" data-lang="es">Español</a></li>
-          <li><a class="dropdown-item" href="#" data-lang="fr">Français</a></li>
-          <li><a class="dropdown-item" href="#" data-lang="de">Deutsch</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-overlay">
-        <div class="container text-center">
-          <h1 class="display-3 fw-bold mb-3" data-translate="title">
-            Rinat & Aziza
-          </h1>
-          <p class="lead mb-4" data-translate="subtitle">
-            We're getting married!
-          </p>
-          <p class="h3" data-translate="date">October 11, 2025</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Navigation -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#our-story" data-translate="menu_story"
-                >Our Story</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#details" data-translate="menu_details"
-                >Details</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#location"
-                data-translate="menu_location"
-                >Location</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#rsvp" data-translate="menu_rsvp"
-                >RSVP</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#gallery" data-translate="menu_gallery"
-                >Gallery</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav> -->
-
-    <!-- Invitation Section -->
-    <section
-      class="section"
-      id="invitation-section"
+    <div
+      class="lang-selector"
       style="
-        background: url('./yurt-door.jpg') center center/cover no-repeat;
-        color: white;
-        position: relative;
+        background: rgba(255, 250, 240, 0.7);
+        border-radius: 0.5em;
+        padding: 0.3em 0.7em;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       "
     >
-      <div
+      <select
+        id="lang-switcher"
+        class="form-select form-select-sm"
         style="
-          background: rgba(0, 0, 0, 0.5);
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
+          background: transparent;
+          border: none;
+          box-shadow: none;
+          color: #333;
+          font-weight: 500;
         "
-      ></div>
-      <div class="container text-center" style="position: relative; z-index: 1">
-        <h2 id="invited-text" class="display-4 fw-bold"></h2>
-      </div>
-    </section>
-    <script>
-      // Get guestName from URL
-      function getGuestName() {
-        const params = new URLSearchParams(window.location.search);
-        const name = params.get("guestName");
-        return name ? decodeURIComponent(name) : null;
-      }
-      // Set invitation text
-      document.addEventListener("DOMContentLoaded", function () {
-        const guestName = getGuestName();
-        const invitedText = document.getElementById("invited-text");
-        invitedText.textContent = guestName
-          ? `${guestName}, you are invited!`
-          : "You are invited!";
-      });
-    </script>
+      >
+        <option value="en">English</option>
+        <option value="ru">Русский</option>
+        <option value="ky">Кыргызча</option>
+      </select>
+    </div>
 
-    <!-- Our Story Section -->
-    <section id="our-story" class="section bg-light">
-      <div class="container">
-        <h2 class="section-title" data-translate="story_title">Our Story</h2>
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="gallery-img"></div>
-          </div>
-          <div class="col-lg-6">
-            <p data-translate="story_text1">
-              Sarah and Michael met in college during a study abroad program in
-              Barcelona. What started as friendship quickly blossomed into love
-              as they explored the city's hidden gems together.
-            </p>
-            <p data-translate="story_text2">
-              After five wonderful years together, Michael proposed during a
-              sunset picnic at their favorite spot by the lake. Of course, Sarah
-              said yes!
-            </p>
-            <p data-translate="story_text3">
-              We're excited to celebrate our love with family and friends and
-              start this new chapter of our lives together.
-            </p>
+    <header class="hero text-center">
+      <div>
+        <h1
+          class="display-3"
+          style="
+            color: #1a2b1a;
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 0.5em 1em;
+            border-radius: 0.5em;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          "
+        >
+          Rinat & Aziza
+        </h1>
+        <br />
+        <p
+          class="lead brand-font"
+          data-i18n="getting_married_title"
+          style="
+            color: #1a2b1a;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 0.3em 1em;
+            border-radius: 0.5em;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          "
+        >
+          We're Getting Married!
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section text-center">
+        <div class="container">
+          <div class="container-box">
+            <h2 data-i18n="you_are_invited">You are invited!</h2>
+            <p
+              class="lead"
+              id="guest-name-display"
+              style="font-size: 1.5rem"
+            ></p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Wedding Details Section -->
-    <section id="details" class="section">
-      <div class="container">
-        <h2 class="section-title" data-translate="details_title">
-          Wedding Details
-        </h2>
-        <div class="row">
-          <div class="col-md-4 text-center mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="fas fa-calendar-alt fa-3x mb-3 text-primary"></i>
-                <h3 data-translate="when">When</h3>
-                <p class="h5">June 15, 2024</p>
-                <p data-translate="ceremony_time">Ceremony: 4:00 PM</p>
-                <p data-translate="reception_time">Reception: 6:00 PM</p>
-                <!-- Add to Calendar Button -->
-                <div class="mt-3">
+      <section class="section bg-light-pink">
+        <div class="container">
+          <div class="container-box">
+            <div class="row text-center g-4">
+              <div class="col-md-12">
+                <h2 class="mb-4" data-i18n="details_title">Wedding Details</h2>
+              </div>
+              <div class="col-md-4">
+                <h3 data-i18n="when_title">When</h3>
+                <p data-i18n="when_date">Saturday, 11 October 2025</p>
+                <p data-i18n="when_time">at 4:00 PM</p>
+              </div>
+              <div class="col-md-4">
+                <h3 data-i18n="where_title">Where</h3>
+                <p data-i18n="where_venue">"Someplace"</p>
+                <p data-i18n="where_address">Tokmok, Kyrgyzstan</p>
+                <div class="d-grid gap-2 mt-3">
                   <a
-                    href="#"
-                    class="btn btn-outline-primary"
-                    data-translate="add_calendar"
-                    >Add to Calendar</a
+                    href="https://go.2gis.com/W7WpM"
+                    target="_blank"
+                    class="btn btn-custom"
                   >
+                    Open in 2GIS
+                  </a>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4 text-center mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="fas fa-map-marker-alt fa-3x mb-3 text-primary"></i>
-                <h3 data-translate="where">Where</h3>
-                <p class="h5">The Grand Lakeside Resort</p>
-                <p>123 Lakeshore Drive</p>
-                <p>Lakeview, CA 90210</p>
-                <div class="mt-3">
-                  <a
-                    href="#location"
-                    class="btn btn-outline-primary"
-                    data-translate="view_map"
-                    >View Map</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 text-center mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <i class="fas fa-info-circle fa-3x mb-3 text-primary"></i>
-                <h3 data-translate="other_info">Other Info</h3>
-                <p data-translate="dress_code">Dress code: Semi-formal</p>
-                <p data-translate="parking">Parking available on site</p>
-                <p data-translate="hotels">Hotel blocks available</p>
-                <div class="mt-3">
-                  <a
-                    href="#"
-                    class="btn btn-outline-primary"
-                    data-translate="faq"
-                    >FAQ</a
-                  >
-                </div>
+              <div class="col-md-4">
+                <h3 data-i18n="info_title">Other Info</h3>
+                <p>
+                  <b data-i18n="info_dress_code_label"></b>
+                  <span data-i18n="info_dress_code"></span>
+                </p>
+                <p>
+                  <b data-i18n="info_parking_label"></b>
+                  <span data-i18n="info_parking"></span>
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Location Section -->
-    <section id="location" class="section bg-light">
-      <div class="container">
-        <h2 class="section-title" data-translate="location_title">Location</h2>
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="location-img"></div>
-          </div>
-          <div class="col-lg-6">
-            <h3 data-translate="venue_name">The Grand Lakeside Resort</h3>
-            <p data-translate="venue_description">
-              A beautiful lakeside venue with stunning views and elegant spaces
-              for both ceremony and reception.
-            </p>
-            <p>
-              <i class="fas fa-map-marker-alt me-2"></i> 123 Lakeshore Drive,
-              Lakeview, CA 90210
-            </p>
-            <p><i class="fas fa-phone me-2"></i> (555) 123-4567</p>
-            <p>
-              <i class="fas fa-globe me-2"></i>
-              <a href="https://grandlakeside.com">grandlakeside.com</a>
-            </p>
-
-            <div class="mt-4">
-              <a
-                href="https://maps.google.com?q=The+Grand+Lakeside+Resort+123+Lakeshore+Drive+Lakeview+CA+90210"
-                class="btn btn-primary me-2"
-                target="_blank"
-                data-translate="get_directions"
-              >
-                <i class="fas fa-directions me-1"></i> Get Directions
-              </a>
-              <a
-                href="#"
-                class="btn btn-outline-secondary"
-                data-translate="hotel_info"
-                >Hotel Information</a
-              >
-            </div>
-
-            <div class="mt-4">
-              <h4 data-translate="transportation">Transportation</h4>
-              <p data-translate="transport_info">
-                Shuttle service will be provided from designated hotels to the
-                venue. Please indicate if you'll need transportation when you
-                RSVP.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RSVP Section -->
-    <section id="rsvp" class="section">
-      <div class="container">
-        <h2 class="section-title" data-translate="rsvp_title">RSVP</h2>
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="card">
-              <div class="card-body">
-                <form id="rsvpForm">
-                  <div class="row mb-3">
-                    <div class="col-md-6">
-                      <label
-                        for="name"
-                        class="form-label"
-                        data-translate="name_label"
-                        >Name</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        required
-                      />
-                    </div>
-                    <div class="col-md-6">
-                      <label
-                        for="email"
-                        class="form-label"
-                        data-translate="email_label"
-                        >Email</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label
-                      for="guests"
-                      class="form-label"
-                      data-translate="guests_label"
-                      >Number of Guests</label
-                    >
-                    <select class="form-select" id="guests" required>
-                      <option value="1" data-translate="guest_1">
-                        1 (Just me)
-                      </option>
-                      <option value="2" data-translate="guest_2">2</option>
-                      <option value="3" data-translate="guest_3">3</option>
-                      <option value="4" data-translate="guest_4">4</option>
-                      <option value="5" data-translate="guest_5">5+</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <div class="form-label" data-translate="attending_label">
-                      Will you be attending?
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="attending"
-                        id="attendingYes"
-                        value="yes"
-                        checked
-                      />
-                      <label
-                        class="form-check-label"
-                        for="attendingYes"
-                        data-translate="attending_yes"
-                      >
-                        Yes, I'll be there!
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="attending"
-                        id="attendingNo"
-                        value="no"
-                      />
-                      <label
-                        class="form-check-label"
-                        for="attendingNo"
-                        data-translate="attending_no"
-                      >
-                        Sorry, can't make it
-                      </label>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label
-                      for="message"
-                      class="form-label"
-                      data-translate="message_label"
-                      >Message for the couple (optional)</label
-                    >
-                    <textarea
-                      class="form-control"
-                      id="message"
-                      rows="3"
-                    ></textarea>
-                  </div>
-                  <div class="mb-3 form-check">
-                    <input
-                      type="checkbox"
-                      class="form-check-input"
-                      id="transportation"
-                    />
-                    <label
-                      class="form-check-label"
-                      for="transportation"
-                      data-translate="transport_needed"
-                    >
-                      I will need transportation from the hotel
-                    </label>
-                  </div>
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="text-center mb-4">
+                <h2 data-i18n="rsvp_title">RSVP</h2>
+                <p data-i18n="rsvp_subtitle">
+                  Please respond by August 15, 2025
+                </p>
+              </div>
+              <form id="rsvp-form">
+                <div class="mb-3">
+                  <label for="name" class="form-label" data-i18n="form_name"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    data-i18n-placeholder="form_name_placeholder"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label" data-i18n="form_email"
+                    >Email (Optional)</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    data-i18n-placeholder="form_email_placeholder"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label
+                    for="guests"
+                    class="form-label"
+                    data-i18n="form_guests_count"
+                    >Number of Guests</label
+                  >
+                  <select class="form-select" id="guests">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </div>
+                <div id="additional-guests-container" class="mb-3"></div>
+                <div class="d-grid">
                   <button
                     type="submit"
-                    class="btn btn-primary"
-                    data-translate="submit_rsvp"
+                    class="btn btn-custom"
+                    data-i18n="form_button"
                   >
-                    Submit RSVP
+                    Reserve My Spot
                   </button>
-                </form>
-              </div>
+                </div>
+              </form>
+              <div
+                id="rsvp-success"
+                class="alert alert-success mt-4"
+                style="display: none"
+                role="alert"
+              ></div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Gallery Section -->
-    <!-- <section id="gallery" class="section bg-light">
-      <div class="container">
-        <h2 class="section-title" data-translate="gallery_title">Gallery</h2>
-        <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="gallery-img"></div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="gallery-img"></div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="gallery-img"></div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="gallery-img"></div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="gallery-img"></div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <div class="gallery-img"></div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-      <div class="container text-center">
-        <p data-translate="footer_text">We can't wait to celebrate with you!</p>
-        <p>Rinat & Aziza</p>
-      </div>
+    <footer class="text-center py-4 bg-light-pink">
+      <p class="brand-font fs-4 mb-0">Made with Love ❤️</p>
+      <p class="brand-font fs-4 mb-0">Rinat & Aziza</p>
+      <p class="mb-0">11.10.2025</p>
     </footer>
 
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Translation Script -->
     <script>
-      // Simple translation implementation
-      const translations = {
-        en: {
-          title: "Sarah & Michael",
-          subtitle: "We're getting married!",
-          date: "June 15, 2024",
-          menu_story: "Our Story",
-          menu_details: "Details",
-          menu_location: "Location",
-          menu_rsvp: "RSVP",
-          menu_gallery: "Gallery",
-          story_title: "Our Story",
-          story_text1: "Sarah and Michael met in college...",
-          story_text2: "After five wonderful years together...",
-          story_text3: "We're excited to celebrate our love...",
-          details_title: "Wedding Details",
-          when: "When",
-          ceremony_time: "Ceremony: 4:00 PM",
-          reception_time: "Reception: 6:00 PM",
-          add_calendar: "Add to Calendar",
-          where: "Where",
-          view_map: "View Map",
-          other_info: "Other Info",
-          dress_code: "Dress code: Semi-formal",
-          parking: "Parking available on site",
-          hotels: "Hotel blocks available",
-          faq: "FAQ",
-          location_title: "Location",
-          venue_name: "The Grand Lakeside Resort",
-          venue_description: "A beautiful lakeside venue...",
-          get_directions: "Get Directions",
-          hotel_info: "Hotel Information",
-          transportation: "Transportation",
-          transport_info: "Shuttle service will be provided...",
-          rsvp_title: "RSVP",
-          name_label: "Name",
-          email_label: "Email",
-          guests_label: "Number of Guests",
-          guest_1: "1 (Just me)",
-          guest_2: "2",
-          guest_3: "3",
-          guest_4: "4",
-          guest_5: "5+",
-          attending_label: "Will you be attending?",
-          attending_yes: "Yes, I'll be there!",
-          attending_no: "Sorry, can't make it",
-          message_label: "Message for the couple (optional)",
-          transport_needed: "I will need transportation from the hotel",
-          submit_rsvp: "Submit RSVP",
-          gallery_title: "Gallery",
-          footer_text: "We can't wait to celebrate with you!",
-        },
-        es: {
-          title: "Sarah y Michael",
-          subtitle: "¡Nos casamos!",
-          date: "15 de junio de 2024",
-          menu_story: "Nuestra historia",
-          menu_details: "Detalles",
-          menu_location: "Ubicación",
-          menu_rsvp: "Confirmar asistencia",
-          menu_gallery: "Galería",
-          story_title: "Nuestra historia",
-          story_text1: "Sarah y Michael se conocieron en la universidad...",
-          story_text2: "Después de cinco maravillosos años juntos...",
-          story_text3: "Estamos emocionados de celebrar nuestro amor...",
-          details_title: "Detalles de la boda",
-          when: "Cuándo",
-          ceremony_time: "Ceremonia: 16:00",
-          reception_time: "Recepción: 18:00",
-          add_calendar: "Agregar al calendario",
-          where: "Dónde",
-          view_map: "Ver mapa",
-          other_info: "Otra información",
-          dress_code: "Código de vestimenta: Semi-formal",
-          parking: "Estacionamiento disponible",
-          hotels: "Bloques de hoteles disponibles",
-          faq: "Preguntas frecuentes",
-          location_title: "Ubicación",
-          venue_name: "The Grand Lakeside Resort",
-          venue_description: "Un hermoso lugar junto al lago...",
-          get_directions: "Cómo llegar",
-          hotel_info: "Información de hoteles",
-          transportation: "Transporte",
-          transport_info: "Se proporcionará servicio de transporte...",
-          rsvp_title: "Confirmar asistencia",
-          name_label: "Nombre",
-          email_label: "Correo electrónico",
-          guests_label: "Número de invitados",
-          guest_1: "1 (Solo yo)",
-          guest_2: "2",
-          guest_3: "3",
-          guest_4: "4",
-          guest_5: "5+",
-          attending_label: "¿Asistirás?",
-          attending_yes: "¡Sí, estaré allí!",
-          attending_no: "Lo siento, no podré asistir",
-          message_label: "Mensaje para la pareja (opcional)",
-          transport_needed: "Necesitaré transporte desde el hotel",
-          submit_rsvp: "Enviar confirmación",
-          gallery_title: "Galería",
-          footer_text: "¡Esperamos celebrar con ustedes!",
-        },
-        // Add more languages as needed
-      };
+      $(document).ready(function () {
+        // --- I18N (Internationalization) & CONTENT ---
+        const translations = {
+          en: {
+            getting_married_title: "We're Getting Married!",
+            you_are_invited: "You are invited!",
+            details_title: "Wedding Details",
+            when_title: "When",
+            when_date: "Saturday, 11 October 2025",
+            when_time: "at 4:00 PM",
+            where_title: "Where",
+            where_venue: '"Supara" Ethno-Complex',
+            where_address: "Bishkek, Kyrgyzstan",
+            info_title: "Other Info",
+            info_dress_code_label: "Dress Code:",
+            info_dress_code: "Formal Attire",
+            info_parking_label: "Parking:",
+            info_parking: "Available on site",
+            rsvp_title: "RSVP",
+            rsvp_subtitle: "Please respond by August 15, 2025",
+            form_name: "Your Full Name",
+            form_name_placeholder: "e.g., John Doe",
+            form_email: "Email (Optional)",
+            form_email_placeholder: "e.g., john.doe@example.com",
+            form_guests_count: "Number of Guests (including yourself)",
+            form_guest_name_placeholder: "Guest Full Name",
+            form_button: "Reserve My Spot",
+            rsvp_success_message:
+              "Thank you! Your reservation has been received.",
+          },
+          ru: {
+            getting_married_title: "Мы женимся!",
+            you_are_invited: "Приглашаем Вас!",
+            details_title: "Детали свадьбы",
+            when_title: "Когда",
+            when_date: "Суббота, 11 октября 2025 г.",
+            when_time: "в 16:00",
+            where_title: "Где",
+            where_venue: 'Этно-комплекс "Супара"',
+            where_address: "г. Бишкек, Кыргызстан",
+            info_title: "Другая информация",
+            info_dress_code_label: "Дресс-код:",
+            info_dress_code: "Вечерний",
+            info_parking_label: "Парковка:",
+            info_parking: "Доступна на месте",
+            rsvp_title: "Подтверждение",
+            rsvp_subtitle: "Пожалуйста, ответьте до 15 августа 2025 г.",
+            form_name: "Ваше полное имя",
+            form_name_placeholder: "напр., Иван Иванов",
+            form_email: "Email (необязательно)",
+            form_email_placeholder: "напр., ivan.ivanov@example.com",
+            form_guests_count: "Количество гостей (включая вас)",
+            form_guest_name_placeholder: "Полное имя гостя",
+            form_button: "Зарезервировать место",
+            rsvp_success_message: "Спасибо! Ваше бронирование получено.",
+          },
+          ky: {
+            getting_married_title: "Биз үйлөнүп жатабыз!",
+            you_are_invited: "Сизди чакырабыз!",
+            details_title: "Той тууралуу",
+            when_title: "Качан",
+            when_date: "Ишемби, 11-октябрь 2025 ж.",
+            when_time: "саат 16:00",
+            where_title: "Кайда",
+            where_venue: '"Супара" этно-комплекси',
+            where_address: "Бишкек ш., Кыргызстан",
+            info_title: "Башка маалымат",
+            info_dress_code_label: "Дресс-код:",
+            info_dress_code: "Майрамдык",
+            info_parking_label: "Унаа токтотуучу жай:",
+            info_parking: "Комплексте бар",
+            rsvp_title: "Жооп берүү",
+            rsvp_subtitle: "Сураныч, 15-август 2025 ж. чейин жооп бериңиз",
+            form_name: "Сиздин толук аты-жөнүңүз",
+            form_name_placeholder: "м-ы, Асанов Үсөн",
+            form_email: "Email (милдеттүү эмес)",
+            form_email_placeholder: "м-ы, uson.asanov@example.com",
+            form_guests_count: "Коноктордун саны (өзүңүздү кошкондо)",
+            form_guest_name_placeholder: "Коноктун толук аты-жөнү",
+            form_button: "Орун ээлөө",
+            rsvp_success_message: "Рахмат! Сиздин катышууңуз кабыл алынды.",
+          },
+        };
 
-      // Function to change language
-      function changeLanguage(lang) {
-        const elements = document.querySelectorAll("[data-translate]");
-        elements.forEach((element) => {
-          const key = element.getAttribute("data-translate");
-          if (translations[lang] && translations[lang][key]) {
-            //element.textContent = translations[lang][key];
-            if (element.placeholder) {
-              //element.placeholder = translations[lang][key];
+        function getQueryParam(param) {
+          const urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+        }
+
+        function changeLanguage(lang) {
+          if (!translations[lang]) lang = "en"; // Default to English
+
+          // Update all text elements
+          $("[data-i18n]").each(function () {
+            const key = $(this).data("i18n");
+            $(this).html(translations[lang][key]);
+          });
+
+          // Update all placeholder attributes
+          $("[data-i18n-placeholder]").each(function () {
+            const key = $(this).data("i18n-placeholder");
+            $(this).attr("placeholder", translations[lang][key]);
+          });
+
+          // Update RSVP success message
+          $("#rsvp-success").html(translations[lang].rsvp_success_message);
+
+          // Set dropdown to current language
+          $("#lang-switcher").val(lang);
+
+          // Update URL without reloading page
+          const url = new URL(window.location);
+          url.searchParams.set("lang", lang);
+          window.history.pushState({}, "", url);
+        }
+
+        // --- DYNAMIC CONTENT ---
+
+        // Personalize guest name from URL
+        const guestName = getQueryParam("guest");
+        if (guestName) {
+          $("#guest-name-display").text(decodeURIComponent(guestName));
+        }
+
+        // --- DYNAMIC RSVP FORM ---
+        $("#guests").on("change", function () {
+          const count = parseInt($(this).val());
+          const container = $("#additional-guests-container");
+          container.empty(); // Clear previous fields
+
+          if (count > 1) {
+            for (let i = 1; i < count; i++) {
+              const currentLang = $("#lang-switcher").val();
+              const placeholder =
+                translations[currentLang].form_guest_name_placeholder +
+                ` ${i + 1}`;
+              container.append(
+                `<div class="mb-3">
+                                <input type="text" class="form-control additional-guest-name" placeholder="${placeholder}" required>
+                             </div>`
+              );
             }
           }
         });
-      }
 
-      // Set up language selector
-      document.querySelectorAll(".dropdown-item").forEach((item) => {
-        item.addEventListener("click", function (e) {
-          e.preventDefault();
-          const lang = this.getAttribute("data-lang");
-          changeLanguage(lang);
+        // Handle RSVP form submission
+        $("#rsvp-form").on("submit", function (e) {
+          e.preventDefault(); // Prevent actual form submission
+
+          const guestNames = $(".additional-guest-name")
+            .map(function () {
+              return $(this).val();
+            })
+            .get();
+
+          const rsvpData = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            guestCount: parseInt($("#guests").val()),
+            additionalGuests: guestNames,
+            timestamp: new Date().toISOString(),
+          };
+
+          // --- FIRESTORE INTEGRATION POINT ---
+          // Here you would add your code to send `rsvpData` to Firestore.
+          // Example: db.collection("rsvps").add(rsvpData)
+          // For now, we'll just log it to the console and show a success message.
+          console.log("RSVP Data for Firestore:", rsvpData);
+
+          $("#rsvp-success").slideDown();
+          $("#rsvp-form").slideUp();
+        });
+
+        // --- INITIALIZATION ---
+        const initialLang = getQueryParam("lang") || "en";
+        //TODO fix me, uncomment me =>
+        changeLanguage(initialLang);
+
+        $("#lang-switcher").on("change", function () {
+          changeLanguage($(this).val());
+          // Also trigger change on guests dropdown to update placeholders
+          $("#guests").trigger("change");
         });
       });
-
-      // Initialize with English
-      changeLanguage("en");
-
-      // Form submission
-      document
-        .getElementById("rsvpForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          alert("Thank you for your RSVP!");
-          this.reset();
-        });
     </script>
   </body>
 </html>
