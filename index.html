@@ -109,21 +109,29 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
       "
     >
-      <select
-        id="lang-switcher"
-        class="form-select form-select-sm"
-        style="
-          background: transparent;
-          border: none;
-          box-shadow: none;
-          color: #333;
-          font-weight: 500;
-        "
-      >
-        <option value="en">English</option>
-        <option value="ru">Русский</option>
-        <option value="ky">Кыргызча</option>
-      </select>
+      <div style="display: flex; align-items: center; gap: 0.5em">
+        <img
+          src="globe-language.svg"
+          alt="Language Switcher"
+          style="width: 16px; height: 16px"
+        />
+        <select
+          id="lang-switcher"
+          class="form-select form-select-sm"
+          style="
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            color: #333;
+            font-weight: 500;
+            min-width: 90px;
+          "
+        >
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="ky">Кыргызча</option>
+        </select>
+      </div>
     </div>
 
     <header class="hero text-center">
