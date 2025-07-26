@@ -82,6 +82,14 @@
         border-color: #f5e9d7;
         color: #1a2b1a;
       }
+      .btn-custom:disabled,
+      .btn-custom.disabled {
+        background-color: #e5dcc5 !important;
+        border-color: #e5dcc5 !important;
+        color: #aaa !important;
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
       .container-box {
         background: rgba(255, 255, 255, 0.85); /* Soft white for contrast */
         border-radius: 0.7em;
@@ -152,6 +160,39 @@
         >
           We're Getting Married!
         </p>
+        <br />
+        <img
+          src="arrow-down-photo.png.webp"
+          alt="Scroll down"
+          style="
+            width: 58px;
+            height: 58px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 32px;
+            animation: arrow-bounce 1.2s infinite;
+            z-index: 10;
+            opacity: 0.15;
+            pointer-events: none;
+          "
+        />
+        <style>
+          @keyframes arrow-bounce {
+            0% {
+              transform: translateX(-50%) translateY(0);
+              opacity: 0.85;
+            }
+            50% {
+              transform: translateX(-50%) translateY(15px);
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(-50%) translateY(0);
+              opacity: 0.85;
+            }
+          }
+        </style>
       </div>
     </header>
 
@@ -471,6 +512,21 @@
         // Handle RSVP form submission
         $("#rsvp-form").on("submit", function (e) {
           e.preventDefault(); // Prevent actual form submission
+          $("#rsvp-form button[type='submit']").prop("disabled", true);
+          let secondsLeft = 8;
+          const originalBtnText = $("#rsvp-form button[type='submit']").text();
+          const timerInterval = setInterval(() => {
+            secondsLeft--;
+            $("#rsvp-form button[type='submit']").text(
+              originalBtnText + ` (${secondsLeft})`
+            );
+            if (secondsLeft <= 0) {
+              clearInterval(timerInterval);
+              $("#rsvp-form button[type='submit']")
+                .prop("disabled", false)
+                .text(originalBtnText);
+            }
+          }, 1000);
 
           const guestNames = $(".additional-guest-name")
             .map(function () {
