@@ -375,11 +375,11 @@
               <div class="col-md-4">
                 <h3 data-i18n="info_title">Other Info</h3>
                 <p>
-                  <b data-i18n="info_dress_code_label"></b>
+                  <span data-i18n="info_dress_code_label"></span>
                   <span data-i18n="info_dress_code"></span>
                 </p>
                 <p>
-                  <b data-i18n="info_parking_label"></b>
+                  <span data-i18n="info_parking_label"></span>
                   <span data-i18n="info_parking"></span>
                 </p>
               </div>
@@ -459,12 +459,73 @@
       </section>
     </main>
 
-    <footer class="text-center py-4 bg-light-pink">
+    <footer class="text-center py-4 bg-light-pink" style="position: relative; overflow: hidden;">
       <p class="brand-font fs-4 mb-0">Made with Love ❤️</p>
       <p class="brand-font fs-4 mb-0" data-i18n="rinat_aziza_title">
         Rinat & Aziza
       </p>
       <p class="mb-0">11.10.2025</p>
+
+      <div class="row"></div>
+            <div class="col-12">
+                <!-- Responsive image at bottom left -->
+                <div class="d-none d-md-block" style="position: absolute; left: 0; bottom: 0; z-index: 2;">
+                  <img
+                    src="Frame_39.png"
+                    alt=""
+                    style="display: block; transform: rotate(231deg); width: 300px; height: auto;"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="d-block d-md-none" style="position: absolute; left: 0; bottom: 0; z-index: 2;">
+                  <img
+                    src="Frame_39.png"
+                    alt=""
+                    style="display: block; transform: rotate(231deg);  width: 140px; height: auto;"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <!-- Responsive image at bottom center, lowered by 20px -->
+                <div class="d-none d-md-block" style="position: absolute; left: 50%; bottom: -100px; transform: translateX(-50%); z-index: 2;">
+                  <img
+                    src="Frame_39.png"
+                    alt=""
+                    style="display: block; width: 200px; height: auto;"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="d-block d-md-none" style="position: absolute; left: 50%; bottom: -70px; transform: translateX(-50%); z-index: 2;">
+                  <img
+                    src="Frame_39.png"
+                    alt=""
+                    style="display: block; width: 140px; height: auto;"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+
+              <div class="col-12">
+                <!-- Responsive image at bottom right -->
+                <div class="d-none d-md-block" style="position: absolute; right: 0; bottom: 0; z-index: 2;">
+                  <img
+                    src="Frame_39.png"
+                    alt=""
+                    style="display: block; transform: rotate(79deg); width: 300px; height: auto;"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="d-block d-md-none" style="position: absolute; right: 0; bottom: 0; z-index: 2;">
+                  <img
+                    src="Frame_39.png"
+                    alt=""
+                    style="display: block; transform: rotate(79deg); width: 140px; height: auto;"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
