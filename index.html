@@ -91,7 +91,6 @@
         cursor: not-allowed;
       }
       .container-box {
-        background: rgba(255, 255, 255, 0.85); /* Soft white for contrast */
         border-radius: 0.7em;
         padding: 2em 1.5em;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
@@ -212,12 +211,12 @@
             <div class="row justify-content-center text-center">
               <div class="col-12 d-flex flex-column align-items-center">
               <p style="font-size: 1rem; text-align: center;">
-                <span data-i18n="dear_our">Дорогие и любимые,</span> <span
+                <span data-i18n="dear_our" style="display: none;">Дорогие и любимые,</span> <span
                 id="guest-name-display"
                 style="font-size: 1.0rem"
                 ></span>
                 <br />
-                <span data-i18n="you_are_invited">Приглашаем вас на нашу свадьбу! 💖 Приходите танцевать, веселиться
+                <span data-i18n="you_are_invited">Приглашаем на нашу свадьбу! 💖 Приходите танцевать, веселиться
                 и готовьте свои поздравления - это всё, что нам нужно! 💃✨</span>
                 <br /><br />
                 <span data-i18n="with_love_rinat_and_aziza">С любовью,<br />
@@ -234,6 +233,7 @@
                 background: rgba(255, 250, 240, 0.6);
                 text-align: center;
                 max-width: 600px;
+                display: none;
                 "
                 class="mx-auto"
               >
@@ -261,7 +261,7 @@
                   <img
                     src="leaf.png.webp"
                     alt=""
-                    style="display: block; width: 300px; height: auto;"
+                    style="display: block; width: 200px; height: auto;"
                     class="img-fluid"
                   />
                 </div>
@@ -301,7 +301,7 @@
                   <img
                     src="leaf.png.webp"
                     alt=""
-                    style="display: block; transform: rotate(90deg); width: 300px; height: auto;"
+                    style="display: block; transform: rotate(90deg); width: 200px; height: auto;"
                     class="img-fluid"
                   />
                 </div>
@@ -610,7 +610,7 @@
             dear_our: "Дорогие и любимые,",
             with_love_rinat_and_aziza: "С любовью,<br />Ринат & Азиза<br />",
             getting_married_title: "Мы женимся!",
-            you_are_invited: `Приглашаем вас на нашу свадьбу! 💖 Приходите танцевать, веселиться
+            you_are_invited: `Приглашаем на нашу свадьбу 💖 Приходите танцевать, веселиться
                 и готовьте свои поздравления - это всё, что нам нужно! 💃✨`,
             details_title: "Детали свадьбы",
             when_title: "Когда",
