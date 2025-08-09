@@ -27,11 +27,11 @@
         font-family: "Playfair Display", serif;
       }
       .hero {
-        background: url("bg-1625.png") no-repeat center center;
-        background-size: contain;
+        background: url("image.png") no-repeat center center;
+        background-size: cover;
         height: 100vh;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         color: white;
         /* background-attachment: fixed; */
@@ -139,13 +139,14 @@
           style="
             color: #a67c00;
             text-shadow: 0 1px 6px rgba(255,255,255,0.7), 0 2px 8px rgba(0,0,0,0.12);
-            background: rgba(255, 255, 255, 0.55);
+            /* background: rgba(255, 255, 255, 0.55); */
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             padding: 0.5em 1em;
             border-radius: 0.5em;
             display: inline-block;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+            margin-top: 120px;
           "
         >
           Rinat & Aziza
@@ -157,18 +158,30 @@
           style="
             color: #a67c00;
             text-shadow: 0 1px 6px rgba(255,255,255,0.7), 0 2px 8px rgba(0,0,0,0.12);
-            
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             padding: 0.3em 1em;
             border-radius: 0.5em;
-            display: inline-block;
+            display: none;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
           "
         >
           We're Getting Married!
         </p>
+        <img src="bg-1625.png" style="
+        background: no-repeat center center;
+        background-size: contain;
+        margin-left: 10px;
+         width: 100vw;">
+        <div style="margin-top: 1.5em;"></div>
+          <span class="brand-font" style="
+          font-size: 2rem;
+           color: #a67c00; 
+           padding: 0.2em 0.8em; 
+           border-radius: 0.5em;">
+            11.10.25
+          </span>
         <br />
         <img
           src="arrow-down-photo.png.webp"
@@ -186,6 +199,8 @@
             pointer-events: none;
           "
         />
+        
+        </div>
         <style>
           @keyframes arrow-bounce {
             0% {
