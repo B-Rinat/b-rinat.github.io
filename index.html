@@ -26,10 +26,21 @@
       .brand-font {
         font-family: "Playfair Display", serif;
       }
+      .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('image.png') center / cover no-repeat;
+        z-index: -1; /* Places it behind content */
+      }
       .hero {
-        background: url("image.png") no-repeat center center;
-        background-size: cover;
+        /* background: url("image.png") center / cover no-repeat fixed; */
         height: 100vh;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -41,7 +52,8 @@
         padding: 30px 0;
       }
       .bg-light-pink {
-        background-color: #fffaf0 !important; /* Ivory */
+        /* background-color: #fffaf0 !important;  */
+        /* Ivory */
       }
       .lang-selector {
         position: absolute;
@@ -96,6 +108,7 @@
     </style>
   </head>
   <body>
+    <div class="background"></div>
     <div
       class="lang-selector"
       style="
@@ -173,7 +186,8 @@
         background: no-repeat center center;
         background-size: contain;
         margin-left: 10px;
-         width: 100vw;">
+         width: 100vw;
+         max-width: 550px;">
         <div style="margin-top: 1.5em;"></div>
           <span class="brand-font" style="
           font-size: 2rem;
