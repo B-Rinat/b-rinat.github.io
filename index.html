@@ -10,8 +10,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap"
-    rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&display=swap"
+    rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -34,7 +35,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('image.png') center / cover no-repeat;
+      background: url('background-1.jpg') center / cover no-repeat;
       z-index: -1;
       /* Places it behind content */
     }
@@ -156,7 +157,7 @@
             -webkit-backdrop-filter: blur(8px);
             padding: 0.5em 1em;
             border-radius: 0.5em;
-            display: inline-block;
+            display: none;
             /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
             margin-top: 90px;
           ">
@@ -176,7 +177,7 @@
           ">
         We're Getting Married!
       </p>
-      <img src="bg-1625.png" style="
+      <img src="first_page.jpg" style="
         background: no-repeat center center;
         background-size: contain;
         margin-left: 10px;
@@ -188,7 +189,7 @@
            /* color: #a67c00;  */
            padding: 0.2em 0.8em; 
            border-radius: 0.5em;">
-        11.10.25
+
       </span>
       <br />
       <img src="arrow-down-photo.png.webp" alt="Scroll down" style="
@@ -228,7 +229,7 @@
 
   <main>
     <section class="section text-center" style="position: relative; overflow: hidden;"></section>
-    <div class="container">
+    <div class="container" style="margin-bottom: 120px;">
       <div class="container-box position-relative">
         <div class="row justify-content-center text-center">
           <div class="col-12 d-flex flex-column align-items-center">
@@ -236,7 +237,7 @@
               <span data-i18n="dear_our" style="display: none;">Дорогие и любимые,</span> <span id="guest-name-display"
                 style="font-size: 1.2rem"></span>
               <br /><br />
-              <span data-i18n="you_are_invited" style="font-family: 'Roboto', sans-serif;">Приглашаем на нашу свадьбу!
+              <span data-i18n="you_are_invited">Приглашаем на нашу свадьбу!
                 💖 Приходите танцевать, веселиться
                 и готовьте свои поздравления - это всё, что нам нужно! 💃✨</span>
               <br /><br />
@@ -271,7 +272,7 @@
           </div>
         </div>
         <div class="row"></div>
-        <div class="col-12">
+        <div class="col-12" style="display: none;">
           <!-- Responsive image at bottom left -->
           <div class="d-none d-md-block" style="position: absolute; left: 0; bottom: 0; z-index: 2;">
             <img src="leaf.png.webp" alt="" style="display: block; width: 200px; height: auto;" class="img-fluid" />
@@ -293,7 +294,7 @@
           </div>
         </div>
 
-        <div class="col-12">
+        <div class="col-12" style="display: none;">
           <!-- Responsive image at bottom right -->
           <div class="d-none d-md-block" style="position: absolute; right: 0; bottom: 0; z-index: 2;">
             <img src="leaf.png.webp" alt=""
@@ -319,13 +320,13 @@
             </div>
             <div class="col-md-4">
               <h3 data-i18n="when_title" style="color: #06402B"><b>When</b></h3>
-              <p data-i18n="when_date" style="font-family: 'Roboto', sans-serif;">Saturday, 11 October 2025</p>
-              <p data-i18n="when_time" style="font-family: 'Roboto', sans-serif;">at 4:00 PM</p>
+              <p data-i18n="when_date">Saturday, 11 October 2025</p>
+              <p data-i18n="when_time">at 4:00 PM</p>
             </div>
             <div class="col-md-4">
               <h3 data-i18n="where_title" style="color: #06402B"><b>Where</b></h3>
-              <p data-i18n="where_venue" style="font-family: 'Roboto', sans-serif;">"Someplace"</p>
-              <p data-i18n="where_address" style="font-family: 'Roboto', sans-serif;">Tokmok, Kyrgyzstan</p>
+              <p data-i18n="where_venue">"Someplace"</p>
+              <p data-i18n="where_address">Tokmok, Kyrgyzstan</p>
               <div class="d-flex justify-content-center gap-3 mt-3">
                 <button type="button" class="btn btn-custom p-0" style="
                       background: none;
@@ -487,7 +488,7 @@
     const style = document.createElement('style');
     style.innerHTML = `
         body, h1, h2, h3, .brand-font, .form-label, .form-control, .form-select, button, input, textarea {
-        font-family: 'Dancing Script', 'Pacifico', cursive !important;
+        font-family: 'Caveat', cursive !important;
         letter-spacing: 0.5px;
         }
       `;
@@ -516,9 +517,9 @@
           dear_our: "Dear and beloved,",
           with_love_rinat_and_aziza: "With love,<br />Rinat & Aziza<br />",
           getting_married_title: "We're Getting Married!",
-          you_are_invited: `Our hearts are united and we are determined to start a family! <br />
-We are waiting for you with all our hearts on this joyful day! <br />
-Your arrival is a great honor for us! <br />`,
+          you_are_invited: `OUR HEARTS ARE UNITED AND WE ARE DETERMINED TO START A FAMILY! <BR />
+WE ARE WAITING FOR YOU WITH ALL OUR HEARTS ON THIS JOYFUL DAY! <BR />
+YOUR ARRIVAL IS A GREAT HONOR FOR US! <BR />`,
           details_title: "Wedding Details",
           when_title: "<b>When</b>",
           when_date: "Saturday, 11 October 2025",
@@ -555,8 +556,8 @@ Your arrival is a great honor for us! <br />`,
           dear_our: "Дорогие и любимые,",
           with_love_rinat_and_aziza: "С любовью,<br />Ринат & Азиза<br />",
           getting_married_title: "Мы женимся!",
-          you_are_invited: `В этот день состоится одно из важных событий, которое мы хотим разделить с дорогими людьми <br />
-Приглашаем вас открыть вместе с нами новую страницу нашей жизни!`,
+          you_are_invited: `В ЭТОТ ДЕНЬ СОСТОИТСЯ ОДНО ИЗ ВАЖНЫХ СОБЫТИЙ, КОТОРОЕ МЫ ХОТИМ РАЗДЕЛИТЬ С ДОРОГИМИ ЛЮДЬМИ <BR />
+ПРИГЛАШАЕМ ВАС ОТКРЫТЬ ВМЕСТЕ С НАМИ НОВУЮ СТРАНИЦУ НАШЕЙ ЖИЗНИ!`,
           details_title: "Детали свадьбы",
           when_title: "<b>Когда</b>",
           when_date: "Суббота, 11 октября 2025 г.",
@@ -586,9 +587,9 @@ Your arrival is a great honor for us! <br />`,
           dear_our: "Кымбаттуу жана сүйүктүүлөр,",
           with_love_rinat_and_aziza: "Сүйүү менен,<br />Ринат & Азиза<br />",
           getting_married_title: "Биз үйлөнүп жатабыз!",
-          you_are_invited: `Жүрөктөр биригип, үй-бүлө курууга бел байладык! <br />
-Бул кубанычтуу күндө сизди жан дүйнөбүз менен күтүп жатабыз! <br />
-Сиздин келишиңиз биз үчүн чоң сыймык! <br />`,
+          you_are_invited: `ЖҮРӨКТӨР БИРИГИП, ҮЙ-БҮЛӨ КУРУУГА БЕЛ БАЙЛАДЫК!<br />
+БУЛ КУБАНЫЧТУУ КҮНДӨ СИЗДИ ЖАН ДҮЙНӨБҮЗ МЕНЕН КҮТӨБҮЗ!<br />
+СИЗДИН КЕЛИШИҢИЗ БИЗ ҮЧҮН ЧОҢ СЫЙМЫК!<br />`,
           details_title: "Той тууралуу",
           when_title: "<b>Качан</b>",
           when_date: "Ишемби, 11-октябрь 2025 ж.",
