@@ -154,7 +154,7 @@
         right: 0px;
         top: 5px;
         z-index: 1000;">
-      <img src="music.png" alt="" style="width: 100px;">
+      <img src="music.png" alt="" style="width: 100px;" id="music-player">
     </div>
   </div>
 
@@ -521,6 +521,21 @@
     window.collection = collection;
   </script>
   <script>
+    document.getElementById('music-player').addEventListener('click', function () {
+      // Create audio element if it doesn't exist
+      let audio = this.audio;
+      if (!audio) {
+        audio = new Audio('music/Indila-Love-Story.mp3');
+        this.audio = audio; // Store reference on the image element
+      }
+
+      // Toggle play/pause
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
     $(document).ready(function () {
       // --- I18N (Internationalization) & CONTENT ---
       const translations = {
