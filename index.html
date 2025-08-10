@@ -60,7 +60,8 @@
     .lang-selector {
       position: absolute;
       top: 20px;
-      right: 20px;
+      margin-right: 20px;
+      margin-left: 20px;
       z-index: 1000;
     }
 
@@ -123,16 +124,18 @@
 
 <body>
   <div class="background"></div>
-  <div class="lang-selector" style="
-        background: rgba(255, 250, 240, 0.7);
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div class="lang-selector" style="
+        /* background: rgba(255, 250, 240, 0.7); */
         border-radius: 0.5em;
         padding: 0.3em 0.7em;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        display: none;
+        display: inline-block;
+        max-width: 150px;
       ">
-    <div style="display: flex; align-items: center; gap: 0.5em">
-      <img src="globe-language.svg" alt="Language Switcher" style="width: 16px; height: 16px" />
-      <select id="lang-switcher" class="form-select form-select-sm" style="
+      <div style="display: flex; align-items: center; gap: 0.5em">
+        <img src="globe-language.svg" alt="Language Switcher" style="width: 16px; height: 16px" />
+        <select id="lang-switcher" class="form-select form-select-sm" style="
             background: transparent;
             border: none;
             box-shadow: none;
@@ -140,10 +143,18 @@
             font-weight: 500;
             min-width: 90px;
           ">
-        <option value="en">English</option>
-        <option value="ru">Русский</option>
-        <option value="ky">Кыргызча</option>
-      </select>
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="ky">Кыргызча</option>
+        </select>
+      </div>
+    </div>
+    <div style="
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1000;">
+      <img src="music.png" alt="" style="width: 100px;">
     </div>
   </div>
 
@@ -180,8 +191,9 @@
       <img src="first_page.jpg" style="
         background: no-repeat center center;
         background-size: contain;
-        margin-left: 10px;
+        /* margin-left: 10px; */
          width: 100vw;
+         margin-top: 40px;
          max-width: 550px;">
       <div style="margin-top: 1.5em;"></div>
       <span class="brand-font" style="
@@ -198,7 +210,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 32px;
+            bottom: 0px;
             animation: arrow-bounce 1.2s infinite;
             z-index: 10;
             opacity: 0.15;
@@ -229,7 +241,7 @@
 
   <main>
     <section class="section text-center" style="position: relative; overflow: hidden;"></section>
-    <div class="container" style="margin-bottom: 120px;">
+    <div class="container" style="margin-bottom: 120px; margin-top: 80px;">
       <div class="container-box position-relative">
         <div class="row justify-content-center text-center">
           <div class="col-12 d-flex flex-column align-items-center">
